@@ -115,7 +115,7 @@ def bodovi(c,v,b,n):
     return bodovi1,bodovi2,bodovi3,bodovi4
 
 def sort_bodova(abcdef,prolaze,tablica123456):
-    rating = {'Francuska' : 86, 'Španjolska' : 84, 'Njemačka' : 86, 'Engleska' : 84, 'Portugal' : 85, 'Belgija' : 86,'Italija' : 84, 'Rusija' : 78, 'Švicarska' : 78, 'Austrija' : 78, 'Hrvatska' : 79, 'Ukrajina' : 76, 'Češka' : 76, 'Švedska' : 78, 'Poljska' : 82, 'Finska' : 72, 'Slovačka' : 74, 'Mađarska' : 73, 'Turska' : 78, 'Nizozemska' : 83, 'Danska' : 78, 'Wales' : 76, 'Sjeverna Makedonija' : 70, 'Škotska' : 74}
+    rating = {'France' : 86, 'Spain' : 84, 'Germany' : 86, 'England' : 84, 'Portugal' : 85, 'Belgium' : 86,'Italy' : 84, 'Russia' : 78, 'Switzerland' : 78, 'Austria' : 78, 'Croatia' : 79, 'Ukraine' : 76, 'Czech Republic' : 76, 'Sweeden' : 78, 'Poland' : 82, 'Finland' : 72, 'Slovakia' : 74, 'Hungary' : 73, 'Turkey' : 78, 'Netherlands' : 83, 'Denmark' : 78, 'Wales' : 76, 'North Macedonia' : 70, 'Scotland' : 74}
     bodovi1,bodovi2,bodovi3,bodovi4 = bodovi(rating[abcdef[0]],rating[abcdef[1]],rating[abcdef[2]],rating[abcdef[3]])
     x = {abcdef[0] : bodovi1, abcdef[1] : bodovi2,  abcdef[2] : bodovi3 , abcdef[3] : bodovi4}
     xs = sort_value(x)
@@ -212,10 +212,10 @@ def ishodskup(a,b,c,d,e,f):
         F = True
         prolaze.append(ts[1][0])  
     p = False
-    return prolaze, A,B,C,D,E,F, print('\n''\n' 'Skupina A - Broj bodova: ' '\n' '{}' '\n''\n' 'Skupina B - Broj bodova: ' '\n' '{}' '\n' '\n' 'Skupina C - Broj bodova: ' '\n' '{}' '\n' '\n' 'Skupina D - Broj bodova: ' '\n' '{}' '\n' '\n' 'Skupina E - Broj bodova: ' '\n' '{}' '\n' '\n' 'Skupina F - Broj bodova: ' '\n' '{}'.format(listring(tablica1,p), listring(tablica2,p), listring(tablica3,p), listring(tablica4,p), listring(tablica5,p),listring(tablica6,p)))
+    return prolaze, A,B,C,D,E,F, print('\n''\n' 'Group A - Standings: ' '\n' '{}' '\n''\n' 'Group B - Standings: ' '\n' '{}' '\n' '\n' 'Group C - Standings: ' '\n' '{}' '\n' '\n' 'Group D - Standings: ' '\n' '{}' '\n' '\n' 'Group E - Standings: ' '\n' '{}' '\n' '\n' 'Group F - Standings: ' '\n' '{}'.format(listring(tablica1,p), listring(tablica2,p), listring(tablica3,p), listring(tablica4,p), listring(tablica5,p),listring(tablica6,p)))
 
 def utakmica2(p,z,n,m):
-    rating = {'Francuska' : 86, 'Španjolska' : 84, 'Njemačka' : 86, 'Engleska' : 84, 'Portugal' : 85, 'Belgija' : 86,'Italija' : 84, 'Rusija' : 78, 'Švicarska' : 78, 'Austrija' : 78, 'Hrvatska' : 79, 'Ukrajina' : 76, 'Češka' : 76, 'Švedska' : 78, 'Poljska' : 82, 'Finska' : 72, 'Slovačka' : 74, 'Mađarska' : 73, 'Turska' : 78, 'Nizozemska' : 83, 'Danska' : 78, 'Wales' : 76, 'Sjeverna Makedonija' : 70, 'Škotska' : 74}
+    rating = {'France' : 86, 'Spain' : 84, 'Germany' : 86, 'England' : 84, 'Portugal' : 85, 'Belgium' : 86,'Italy' : 84, 'Russia' : 78, 'Switzerland' : 78, 'Austria' : 78, 'Croatia' : 79, 'Ukraine' : 76, 'Czech Republic' : 76, 'Sweeden' : 78, 'Poland' : 82, 'Finland' : 72, 'Slovakia' : 74, 'Hungary' : 73, 'Turkey' : 78, 'Netherlands' : 83, 'Denmark' : 78, 'Wales' : 76, 'North Macedonia' : 70, 'Scotland' : 74}
     i = rating[z[n]] - rating[z[m]]
     if i > 0:
         k = 8.5
@@ -230,18 +230,18 @@ def utakmica2(p,z,n,m):
                 g = randint(0,1)
                 if f > g:
                     p.append(z[n])
-                    return p,print('{}' '  {}' '-' '{}  ' '{}' '   (nakon odigranih produžetaka {} pobjeđuje)'.format(z[n],x,y,z[m],z[n]))
+                    return p,print('{}' '  {}' '-' '{}  ' '{}' '   (after extra time {} wins)'.format(z[n],x,y,z[m],z[n]))
                 if f == g:
                     pen = randint(0,1)
                     if pen == 0:
                         p.append(z[n])
-                        return p,print('{}' '  {}' '-' '{}  ' '{}' '   (nakon odigranih produžetaka i penala {} pobjeđuje)'.format(z[n],x,y,z[m],z[n]))
+                        return p,print('{}' '  {}' '-' '{}  ' '{}' '   (after extra time and penalties {} wins)'.format(z[n],x,y,z[m],z[n]))
                     else:
                         p.append(z[m])
-                        return p,print('{}' '  {}' '-' '{}  ' '{}' '   (nakon odigranih produžetaka i penala {} pobjeđuje)'.format(z[n],x,y,z[m],z[m])) 
+                        return p,print('{}' '  {}' '-' '{}  ' '{}' '   (after extra time and penalties {} wins)'.format(z[n],x,y,z[m],z[m])) 
                 else:
                     p.append(z[m])
-                    return p,print('{}' '  {}' '-' '{}  ' '{}' '   (nakon odigranih produžetaka {} pobjeđuje)'.format(z[n],x,y,z[m],z[m]))
+                    return p,print('{}' '  {}' '-' '{}  ' '{}' '   (after extra time {} wins)'.format(z[n],x,y,z[m],z[m]))
             else:
                 p.append(z[m])
                 return p,print('{}' '  {}' '-' '{}  ' '{}'.format(z[n],x,y,z[m]))
@@ -256,18 +256,18 @@ def utakmica2(p,z,n,m):
                 g = randint(0,1)
                 if f > g:
                     p.append(z[n])
-                    return p,print('{}' '  {}' '-' '{}  ' '{}' '   (nakon odigranih produžetaka {} pobjeđuje)'.format(z[n],x,y,z[m],z[n]))
+                    return p,print('{}' '  {}' '-' '{}  ' '{}' '   (after extra time {} wins)'.format(z[n],x,y,z[m],z[n]))
                 if f == g:
                     pen = randint(0,1)
                     if pen == 0:
                         p.append(z[n])
-                        return p,print('{}' '  {}' '-' '{}  ' '{}' '   (nakon odigranih produžetaka i penala {} pobjeđuje)'.format(z[n],x,y,z[m],z[n]))
+                        return p,print('{}' '  {}' '-' '{}  ' '{}' '   (after extra time and penalties {} wins)'.format(z[n],x,y,z[m],z[n]))
                     else:
                         p.append(z[m])
-                        return p,print('{}' '  {}' '-' '{}  ' '{}' '   (nakon odigranih produžetaka i penala {} pobjeđuje)'.format(z[n],x,y,z[m],z[m])) 
+                        return p,print('{}' '  {}' '-' '{}  ' '{}' '   (after extra time and penalties {} wins)'.format(z[n],x,y,z[m],z[m])) 
                 else:
                     p.append(z[m])
-                    return p,print('{}' '  {}' '-' '{}  ' '{}' '   (nakon odigranih produžetaka {} pobjeđuje)'.format(z[n],x,y,z[m],z[m]))
+                    return p,print('{}' '  {}' '-' '{}  ' '{}' '   (after extra time {} wins)'.format(z[n],x,y,z[m],z[m]))
             else:
                 p.append(z[m])
                 return p,print('{}' '  {}' '-' '{}  ' '{}'.format(z[n],x,y,z[m]))
@@ -285,18 +285,18 @@ def utakmica2(p,z,n,m):
                 g = randint(1,2)
                 if g > f:
                     p.append(z[n])
-                    return p,print('{}' '  {}' '-' '{}  ' '{}' '   (nakon odigranih produžetaka {} pobjeđuje)'.format(z[n],x,y,z[m],z[n]))
+                    return p,print('{}' '  {}' '-' '{}  ' '{}' '   (after extra time {} wins)'.format(z[n],x,y,z[m],z[n]))
                 if f == g:
                     pen = randint(0,1)
                     if pen == 0:
                         p.append(z[n])
-                        return p,print('{}' '  {}' '-' '{}  ' '{}' '   (nakon odigranih produžetaka i penala {} pobjeđuje)'.format(z[n],x,y,z[m],z[n]))
+                        return p,print('{}' '  {}' '-' '{}  ' '{}' '   (after extra time and penalties {} wins)'.format(z[n],x,y,z[m],z[n]))
                     else:
                         p.append(z[m])
-                        return p,print('{}' '  {}' '-' '{}  ' '{}' '   (nakon odigranih produžetaka i penala {} pobjeđuje)'.format(z[n],x,y,z[m],z[m])) 
+                        return p,print('{}' '  {}' '-' '{}  ' '{}' '   (after extra time and penalties {} wins)'.format(z[n],x,y,z[m],z[m])) 
                 else:
                     p.append(z[m])
-                    return p,print('{}' '  {}' '-' '{}  ' '{}' '   (nakon odigranih produžetaka {} pobjeđuje)'.format(z[n],x,y,z[m],z[m]))
+                    return p,print('{}' '  {}' '-' '{}  ' '{}' '   (after extra time {} wins)'.format(z[n],x,y,z[m],z[m]))
             else:
                 p.append(z[n])
                 return p,print('{}' '  {}' '-' '{}  ' '{}'.format(z[n],x,y,z[m]))
@@ -311,18 +311,18 @@ def utakmica2(p,z,n,m):
                 g = randint(0,2)
                 if g > f:
                     p.append(z[n])
-                    return p,print('{}' '  {}' '-' '{}  ' '{}' '   (nakon odigranih produžetaka {} pobjeđuje)'.format(z[n],x,y,z[m],z[n]))
+                    return p,print('{}' '  {}' '-' '{}  ' '{}' '   (after extra time {} wins)'.format(z[n],x,y,z[m],z[n]))
                 if f == g:
                     pen = randint(0,1)
                     if pen == 0:
                         p.append(z[n])
-                        return p,print('{}' '  {}' '-' '{}  ' '{}' '   (nakon odigranih produžetaka i penala {} pobjeđuje)'.format(z[n],x,y,z[m],z[n]))
+                        return p,print('{}' '  {}' '-' '{}  ' '{}' '   (after extra time and penalties {} wins)'.format(z[n],x,y,z[m],z[n]))
                     else:
                         p.append(z[m])
-                        return p,print('{}' '  {}' '-' '{}  ' '{}' '   (nakon odigranih produžetaka i penala {} pobjeđuje)'.format(z[n],x,y,z[m],z[m])) 
+                        return p,print('{}' '  {}' '-' '{}  ' '{}' '   (after extra time and penalties {} wins)'.format(z[n],x,y,z[m],z[m])) 
                 else:
                     p.append(z[m])
-                    return p,print('{}' '  {}' '-' '{}  ' '{}' '   (nakon odigranih produžetaka {} pobjeđuje)'.format(z[n],x,y,z[m],z[m]))
+                    return p,print('{}' '  {}' '-' '{}  ' '{}' '   (after extra time {} wins)'.format(z[n],x,y,z[m],z[m]))
             else:
                 p.append(z[n])
                 return p,print('{}' '  {}' '-' '{}  ' '{}'.format(z[n],x,y,z[m]))
@@ -336,18 +336,18 @@ def utakmica2(p,z,n,m):
             et = randint(0,2)
             if et == 0:
                 p.append(z[n])
-                return p,print('{}' '  {}' '-' '{}  ' '{}' '   (nakon odigranih produžetaka {} pobjeđuje)'.format(z[n],x,y,z[m],z[n]))
+                return p,print('{}' '  {}' '-' '{}  ' '{}' '   (after extra time {} wins)'.format(z[n],x,y,z[m],z[n]))
             if et == 1:
                 pen = randint(0,1)
                 if pen == 0:
                     p.append(z[n])
-                    return p,print('{}' '  {}' '-' '{}  ' '{}' '   (nakon odigranih produžetaka i penala {} pobjeđuje)'.format(z[n],x,y,z[m],z[n]))
+                    return p,print('{}' '  {}' '-' '{}  ' '{}' '   (after extra time and penalties {} wins)'.format(z[n],x,y,z[m],z[n]))
                 else:
                     p.append(z[m])
-                    return p,print('{}' '  {}' '-' '{}  ' '{}' '   (nakon odigranih produžetaka i penala {} pobjeđuje)'.format(z[n],x,y,z[m],z[m])) 
+                    return p,print('{}' '  {}' '-' '{}  ' '{}' '   (after extra time and penalties {} wins)'.format(z[n],x,y,z[m],z[m])) 
             else:
                 p.append(z[m])
-                return p,print('{}' '  {}' '-' '{}  ' '{}' '   (nakon odigranih produžetaka {} pobjeđuje)'.format(z[n],x,y,z[m],z[m]))
+                return p,print('{}' '  {}' '-' '{}  ' '{}' '   (after extra time {} wins)'.format(z[n],x,y,z[m],z[m]))
         else:
             p.append(z[m])
             return p,print('{}' '  {}' '-' '{}  ' '{}'.format(z[n],x,y,z[m]))
@@ -512,51 +512,51 @@ def finale(l):
     pobjednik = []
     utakmica2(pobjednik,l,0,1)
 
-    return print('\n''\n' 'Pobjednik Europskog prvenstva 2020. je {}!'.format(pobjednik[0]))
+    return print('\n''\n' 'Winner of the UEFA European Championship 2020. is {}!'.format(pobjednik[0]))
     
 def main():
-    a = ['Turska', 'Italija', 'Wales', 'Švicarska']
-    b = ['Danska', 'Finska', 'Belgija', 'Rusija']
-    c = ['Nizozemska', 'Ukrajina', 'Austrija', 'Sjeverna Makedonija']
-    d = ['Engleska', 'Hrvatska', 'Škotska', 'Češka']
-    e = ['Španjolska', 'Švedska', 'Poljska', 'Slovačka']
-    f = ['Mađarska', 'Portugal', 'Francuska', 'Njemačka']
+    a = ['Turkey', 'Italy', 'Wales', 'Switzerland']
+    b = ['Denmark', 'Finland', 'Belgium', 'Russia']
+    c = ['Netherlands', 'Ukraine', 'Austria', 'North Macedonia']
+    d = ['England', 'Croatia', 'Scotland', 'Czech Republic']
+    e = ['Spain', 'Sweeden', 'Poland', 'Slovakia']
+    f = ['Hungary', 'Portugal', 'France', 'Germany']
     razmak = ' '
-    print('{} Europsko Prvenstvo 2020'.format(razmak*10))
+    print('{} UEFA European Championship 2020'.format(razmak*10))
     p = True
-    print('\n' 'Skupina A: {}' '\n' 'Skupina B: {}' '\n' 'Skupina C: {}' '\n' 'Skupina D: {}' '\n' 'Skupina E: {}' '\n' 'Skupina F: {}'.format(listring(a,p),listring(b,p),listring(c,p),listring(d,p),listring(e,p),listring(f,p)))
+    print('\n' 'Group A: {}' '\n' 'Group B: {}' '\n' 'Group C: {}' '\n' 'Group D: {}' '\n' 'Group E: {}' '\n' 'Group F: {}'.format(listring(a,p),listring(b,p),listring(c,p),listring(d,p),listring(e,p),listring(f,p)))
     st = ''
     print('\n')
     while st != 'start':
-        st = input('Upiši start: ')
+        st = input('Type start: ')
     prolaze, A,B,C,D,E,F,G = ishodskup(a,b,c,d,e,f)
     nast = ''
     print('\n')
-    while nast != 'nastavi':
-        nast = input('Upiši nastavi: ')
+    while nast != 'continue':
+        nast = input('Type continue: ')
     print('\n')
-    print('Osmina finala: ','\n')
+    print('Round of 16: ','\n')
     prolaze = osmina(prolaze,A,B,C,D,E,F)
     nast = ''
     print('\n')
-    while nast != 'nastavi':
-        nast = input('Upiši nastavi: ')
+    while nast != 'continue':
+        nast = input('Type continue: ')
     print('\n')
-    print('Četvrtfinale: ','\n')
+    print('Quarterfinal: ','\n')
     prolaze = cetvrt(prolaze)
     nast = ''
     print('\n')
-    while nast != 'nastavi':
-        nast = input('Upiši nastavi: ')
+    while nast != 'continue':
+        nast = input('Type continue: ')
     print('\n')
-    print('Polufinale: ','\n')
+    print('Semifinal: ','\n')
     prolaze = polu(prolaze)
     nast = ''
     print('\n')
-    while nast != 'nastavi':
-        nast = input('Upiši nastavi: ')
+    while nast != 'continue':
+        nast = input('Type continue: ')
     print('\n')
-    print('Finale: ','\n')
+    print('Final: ','\n')
     pobjednik = finale(prolaze)
 
 main()    
